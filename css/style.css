@@ -160,7 +160,7 @@ body {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    z-index: 0; }
+    z-index: 10; }
     .user-nav__user:hover .user-nav__user--dropdown {
       display: block; }
     .user-nav__user--photo {
@@ -175,8 +175,7 @@ body {
       background-color: #ffffff;
       color: black;
       list-style: none;
-      text-align: right;
-      z-index: 10; }
+      text-align: right; }
     .user-nav__user--dropdown-item {
       padding: 0.8rem 3.3rem; }
       .user-nav__user--dropdown-item:not(:last-child) {
@@ -264,10 +263,35 @@ body {
       display: none; } }
 
 .gallery {
-  display: flex; }
+  display: flex;
+  position: relative;
+  background: black; }
+  .gallery__item {
+    cursor: pointer; }
   .gallery__photo {
     width: 100%;
     display: block; }
+    .gallery__photo:hover {
+      opacity: 0.6; }
+      .gallery__photo:hover + .gallery__caption {
+        display: block; }
+  .gallery__caption {
+    position: absolute;
+    top: 50%;
+    display: none;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-transform: uppercase; }
+    .gallery__caption:hover {
+      display: block;
+      background-color: var(--color-primary-light); }
+    .gallery__caption--first {
+      left: 45px; }
+    .gallery__caption--second {
+      left: 375px; }
+    .gallery__caption--third {
+      left: 690px; }
 
 .overview {
   display: flex;

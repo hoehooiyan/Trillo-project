@@ -156,7 +156,7 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
-    z-index: 0;
+    z-index: 10;
 
     &:hover &--dropdown {
       display: block;
@@ -177,7 +177,6 @@
       color: black;
       list-style: none;
       text-align: right;
-      z-index: 10;
     }
 
     &--dropdown-item {
@@ -311,10 +310,51 @@
 // GALLERY
 .gallery {
   display: flex;
+  position: relative;
+  background: black;
+
+  &__item {
+    cursor: pointer;
+  }
 
   &__photo {
     width: 100%;
     display: block;
+
+    &:hover {
+      opacity: 0.6;
+
+     + .gallery__caption {
+        display: block;
+      }
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    display: none;
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &:hover {
+      display: block;
+      background-color: var(--color-primary-light);
+    }
+
+    &--first {
+      left: 45px;
+    }
+
+    &--second {
+      left: 375px;
+    }
+
+    &--third {
+      left: 690px;
+    }
   }
 }
 
